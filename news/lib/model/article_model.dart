@@ -1,0 +1,31 @@
+class ArticleModel {
+  final String? author;
+  final String? url;
+  final String? urlToImage;
+  final String? publishedAt;
+  final String? content;
+  final String? title;
+  final String? description;
+
+  const ArticleModel({
+    required this.author,
+    required this.url,
+    required this.urlToImage,
+    required this.publishedAt,
+    required this.content,
+    required this.title,
+    required this.description,
+  });
+
+  factory ArticleModel.fromJson(Map<String, dynamic> json) {
+    return ArticleModel(
+      author: json['author'],
+      url: json['url'],
+      urlToImage: json['urlToImage'],
+      publishedAt: json['publishedAt'],
+      content: json['content'],
+      title: json['title'],
+      description: json['description'],
+    );
+  }
+}
