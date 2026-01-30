@@ -199,3 +199,90 @@ Flutter is used by many organizations such as **Alibaba** and others.
 - GetX  
 
 ### Bloc Flow
+- UI → Cubit → UseCase → Repository → DataSource
+- emit() = publish new state
+   
+---
+
+# Flutter Clean Architecture Example 🏗️
+
+This repository demonstrates a Flutter project structured using **Clean Architecture** with state management, API integration, local storage, and more.
+
+---
+
+## Architecture Layers
+
+The project follows **Clean Architecture** principles:
+
+1. **Presentation Layer**  
+   - Flutter UI widgets  
+   - Bloc/Cubit for state management
+
+2. **Domain Layer**  
+   - Business logic  
+   - Entities  
+   - Use cases
+
+3. **Data Layer**  
+   - Repository implementations  
+   - Remote and local data sources  
+
+**Benefits:**
+- Easy maintenance  
+- Testable code  
+- Reusable components  
+- Clear separation of concerns  
+
+---
+
+
+## 💾 Hive Database
+
+- Lightweight local storage  
+- Stores primitive data types directly  
+- Objects require a **TypeAdapter**  
+
+**Generate TypeAdapter:**
+```bash
+flutter packages pub run build_runner build
+```
+---
+  
+## 📄 Pagination
+
+- Avoid loading all data at once
+
+- Use a page size
+
+- Load more when reaching the bottom
+
+Example Approach:
+
+- Fetch initial data page
+
+- Listen to scroll events
+
+- Load next page dynamically
+
+---
+
+## ⚠️ Error Handling
+
+- Wrap operations in try / catch blocks
+
+- Convert exceptions into Failures
+
+- Display user-friendly messages
+
+---
+
+## Design Patterns 🧰
+
+- Singleton
+
+- Service Locator (get_it)
+
+- Repository Pattern
+
+- Callable Classes
+
